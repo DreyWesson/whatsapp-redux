@@ -1,3 +1,7 @@
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import firebase from "firebase";
 import { Avatar, IconButton } from "@material-ui/core";
 import {
   AttachFile,
@@ -6,13 +10,9 @@ import {
   MoreVert,
   SearchOutlined,
 } from "@material-ui/icons";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import db from "../firebase";
 import "./Chat.css";
-import firebase from "firebase";
 import formatDate from "../time";
-import { useSelector } from "react-redux";
 
 function Chat() {
   const [seed, setSeed] = useState(""),
@@ -22,6 +22,11 @@ function Chat() {
     { roomId } = useParams();
 
   const user = useSelector((state) => state.user);
+  // const { ...rest } = useSelector(({ user, posts }) => {
+  //   return { user, posts };
+  // });
+  // console.log("👨‍💻", posts);
+  // console.log("👨", rest.posts);
 
   const sendMsg = (e) => {
     e.preventDefault();

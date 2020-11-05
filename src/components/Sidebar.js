@@ -1,10 +1,11 @@
-import { Avatar, IconButton } from "@material-ui/core";
-import { Chat, DonutLarge, MoreVert, SearchOutlined } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { Avatar, IconButton } from "@material-ui/core";
+import { Chat, DonutLarge, MoreVert, SearchOutlined } from "@material-ui/icons";
+import SidebarChat from "./SidebarChat";
 import db from "../firebase";
 import "./Sidebar.css";
-import SidebarChat from "./SidebarChat";
+
 function Sidebar() {
   const [rooms, setRooms] = useState([]),
     user = useSelector((state) => state.user);

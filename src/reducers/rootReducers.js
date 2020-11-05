@@ -1,5 +1,6 @@
 export const initialState = {
   user: null,
+  // posts: "refree",
 };
 
 export const actionTypes = {

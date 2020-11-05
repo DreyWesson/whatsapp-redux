@@ -1,8 +1,8 @@
-import { Button } from "@material-ui/core";
 import React from "react";
+import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
+import { setUser } from "../actions/userActions";
 import { auth, provider } from "../firebase";
-import { actionTypes } from "../reducers/rootReducers";
 import "./Login.css";
 
 function Login() {
@@ -10,10 +10,7 @@ function Login() {
   const signIn = () => {
     auth
       .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        dispatch({ type: actionTypes.SET_USER, user: result.user });
-      })
+      .then((result) => dispatch(setUser(result)))
       .catch((err) => alert(err.message));
   };
   return (
