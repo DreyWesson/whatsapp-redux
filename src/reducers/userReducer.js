@@ -1,13 +1,12 @@
 export const initialState = {
   user: null,
-  // posts: "refree",
 };
 
 export const actionTypes = {
   SET_USER: "SET_USER",
 };
 
-const rootReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
     case actionTypes.SET_USER:
@@ -20,4 +19,4 @@ const rootReducer = (state = initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default userReducer;

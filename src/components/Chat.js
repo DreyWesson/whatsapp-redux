@@ -21,12 +21,12 @@ function Chat() {
     [messages, setMessages] = useState([]),
     { roomId } = useParams();
 
-  const user = useSelector((state) => state.user);
-  // const { ...rest } = useSelector(({ user, posts }) => {
-  //   return { user, posts };
-  // });
-  // console.log("👨‍💻", posts);
-  // console.log("👨", rest.posts);
+  // Destructure all the reducers from state
+  const { user, message } = useSelector(({ userReducer, messageReducer }) => {
+    return { user: userReducer.user, message: messageReducer.message };
+  });
+  console.log("messages 🕊", message);
+  console.log("user 👨 ", user);
 
   const sendMsg = (e) => {
     e.preventDefault();

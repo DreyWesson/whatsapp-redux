@@ -8,7 +8,7 @@ import "./Sidebar.css";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]),
-    user = useSelector((state) => state.user);
+    { user } = useSelector((state) => state.userReducer);
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>

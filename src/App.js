@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Sidebar from "./components/Sidebar";
 
 function App() {
-  const user = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.userReducer);
 
   return (
     <div className="app">
