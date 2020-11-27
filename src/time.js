@@ -86,7 +86,7 @@ function formatDate(date = new Date(), formatType = "timeSince") {
     }
     return Math.floor(interval) > 1
       ? Math.floor(seconds) + " seconds ago"
-      : Math.floor(seconds) + " seconds ago";
+      : Math.floor(seconds) + " second ago";
   }
 
   return isToday();
