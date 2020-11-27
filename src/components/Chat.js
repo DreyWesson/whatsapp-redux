@@ -94,13 +94,7 @@ function Chat() {
             }`}
           >
             <span className="chat__name">{message.name}</span> {message.message}
-            <span className="chat__timestamp">
-              {formatDate(new Date(), "checkIfToday") ===
-              formatDate(slotInDate, "checkIfToday")
-                ? formatDate(slotInDate, "isToday")
-                : formatDate(slotInDate)}
-              {/* {formatDate(slotInDate)} */}
-            </span>
+            <span className="chat__timestamp">{formatDate(slotInDate)}</span>
           </p>
         ))}
       </div>

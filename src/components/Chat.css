@@ -45,15 +45,16 @@
   font-size: 16px;
   padding: 17px;
   width: fit-content;
+  min-width: 200px;
   border-radius: 0 10px 10px;
   background: #ffffff;
   margin-bottom: 30px;
 }
 .chat__timestamp {
-  margin-left: 10px;
   font-size: xx-small;
-  position: relative;
-  top: -18px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
   color: gray;
 }
 
