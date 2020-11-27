@@ -1,9 +1,7 @@
+import { actionTypes } from "../actions/actionTypes";
+
 export const initialState = {
   message: "refree",
-};
-
-export const actionTypes = {
-  SET_MSG: "SET_MSG",
 };
 
 const messageReducer = (state = initialState, action) => {

@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import rootReducer from "./reducers/rootReducer";
 import "./index.css";
+import thunk from "redux-thunk";
 
-const store = createStore(rootReducer);
-console.log("List of Reducers 👉", store.getState());
+const store = createStore(rootReducer, applyMiddleware(thunk));
+console.log("List of Reducers Stored in STATE 👉", store.getState());
 
 ReactDOM.render(
   <React.StrictMode>

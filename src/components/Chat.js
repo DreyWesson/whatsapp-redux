@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 import { Avatar, IconButton } from "@material-ui/core";
 import {
   AttachFile,
@@ -93,7 +95,11 @@ function Chat() {
           >
             <span className="chat__name">{message.name}</span> {message.message}
             <span className="chat__timestamp">
-              {formatDate(slotInDate, "just time")}
+              {formatDate(new Date(), "checkIfToday") ===
+              formatDate(slotInDate, "checkIfToday")
+                ? formatDate(slotInDate, "isToday")
+                : formatDate(slotInDate)}
+              {/* {formatDate(slotInDate)} */}
             </span>
           </p>
         ))}

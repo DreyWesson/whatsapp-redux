@@ -1,9 +1,7 @@
+import { actionTypes } from "../actions/actionTypes";
+
 export const initialState = {
   user: null,
-};
-
-export const actionTypes = {
-  SET_USER: "SET_USER",
 };
 
 const userReducer = (state = initialState, action) => {
