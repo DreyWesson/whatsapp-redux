@@ -31,10 +31,11 @@ function formatDate(date, formatType) {
   let isToday = () => {
     switch (formatType) {
       case "time&date":
-        // 6:28 pm 11/14/2020
-        return `${strTime} ${
-          date.getMonth() + 1
-        }/${date.getDate()}/${date.getFullYear()}`;
+        // 6:28 pm 14 Nov, 2020
+        return `${strTime} ${date.getDate()} ${month}, ${date.getFullYear()}`;
+      case "time&day&date":
+        // 6:28 pm Sat 14 Nov, 2020
+        return `${strTime} ${day} ${date.getDate()} ${month}, ${date.getFullYear()}`;
       case "isToday":
         // 6:28 pm • Today
         return `${strTime} • Today`;
