@@ -14,7 +14,7 @@ import {
 } from "@material-ui/icons";
 import db from "../firebase";
 import "./Chat.css";
-import formatDate from "../time";
+import { formatDate, isToday } from "../time";
 
 function Chat() {
   const [seed, setSeed] = useState(""),
@@ -70,7 +70,7 @@ function Chat() {
           <h3>{roomName}</h3>
           <p>
             {messages[0]?.message
-              ? `Last seen ${formatDate(slotInDate, "time&date")}`
+              ? `Last seen ${isToday(slotInDate)}`
               : "Offline"}
           </p>
         </div>

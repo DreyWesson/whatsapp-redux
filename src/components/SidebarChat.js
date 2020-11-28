@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import db from "../firebase";
 import { Avatar } from "@material-ui/core";
 import "./SidebarChat.css";
-import formatDate from "../time";
+import { formatDate } from "../time";
 
 function SidebarChat({ id, name, addNewChat }) {
   const [seed, setSeed] = useState("");

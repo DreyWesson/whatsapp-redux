@@ -27,7 +27,7 @@ function formatDate(date = new Date(), formatType = "timeSince") {
   let month = monthName[date.getMonth()];
 
   // if the date is TODAY display only time else display DAY,DATE
-  let isToday = () => {
+  let timeUI = () => {
     switch (formatType) {
       case "time&date":
         // 6:28 pm 14 Nov, 2020
@@ -44,7 +44,6 @@ function formatDate(date = new Date(), formatType = "timeSince") {
       case "longTime":
         // Sat 14 Nov, 2020
         return `${day} ${date.getDate()} ${month}, ${date.getFullYear()}`;
-
       default:
         // 20mins ago
         return timeSince(date);
@@ -89,7 +88,16 @@ function formatDate(date = new Date(), formatType = "timeSince") {
       : Math.floor(seconds) + " second ago";
   }
 
-  return isToday();
+  return timeUI();
 }
+const isToday = (postTime, today = "") => {
+  const checkIsToday = "checkIfToday";
 
-export default formatDate;
+  // returns time in formatDate default if is today and 'longTime if its not'
+  return formatDate(new Date(), checkIsToday) ===
+    formatDate(postTime, checkIsToday)
+    ? formatDate(postTime, today)
+    : formatDate(postTime, "longTime");
+};
+
+export { formatDate, isToday };
